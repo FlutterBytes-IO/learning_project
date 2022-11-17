@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "177971684369",
+    "project_id": "flutterbytes-learning-project",
+    "storage_bucket": "flutterbytes-learning-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:177971684369:android:f3e70ce565b9249fe0fdb0",
+        "android_client_info": {
+          "package_name": "com.example.learning_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "177971684369-u14mn3vjoriqjqbdgil5k59cu51ntvo2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBLOlFDW6Foh8cOmyugkmzutxD8AVHMcw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "177971684369-u14mn3vjoriqjqbdgil5k59cu51ntvo2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

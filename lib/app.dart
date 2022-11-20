@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learning_project/screens/signin_screen.dart';
+import 'package:learning_project/screens/auth_screen.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -22,7 +22,7 @@ class _AppState extends State<App> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SignInScreen(),
+      home: const AuthScreen(),
     );
   }
 }

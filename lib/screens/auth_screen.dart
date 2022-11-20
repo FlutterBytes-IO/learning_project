@@ -4,30 +4,41 @@ import 'package:learning_project/widgets/cm_form_field_widget.dart';
 
 /// Screen to allow users to signin
 
-class SignInScreen extends StatefulWidget {
-  const SignInScreen({super.key});
+enum AuthAction { signIn, signUp }
+
+class AuthScreen extends StatefulWidget {
+  const AuthScreen({super.key});
 
   @override
-  State<SignInScreen> createState() => _SignInScreenState();
+  State<AuthScreen> createState() => _AuthScreenState();
 }
 
-class _SignInScreenState extends State<SignInScreen> {
+class _AuthScreenState extends State<AuthScreen> {
   late final TextEditingController _emailEditingController;
   late final TextEditingController _passwordEditingController;
+
+  late AuthAction _authAction;
+
   @override
   void initState() {
     super.initState();
     _emailEditingController = TextEditingController();
     _passwordEditingController = TextEditingController();
+
+    _authAction = AuthAction.signIn;
   }
+
+  String get title => _authAction == AuthAction.signIn ? 'Sign In' : 'Sign Up';
+
+  String get account => _authAction == AuthAction.signIn
+      ? 'Don\'t hava an account? Sign Up'
+      : 'Have an account? Sign In';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Sign In',
-        ),
+        title: Text(title),
       ),
       body: Padding(
         padding: const EdgeInsets.all(24),
@@ -53,9 +64,28 @@ class _SignInScreenState extends State<SignInScreen> {
             SizedBox(
               width: double.infinity,
               child: CMButton(
-                buttonTitle: 'Login',
-                onPressed: () {},
+                buttonTitle: title,
+                onPressed: () {
+                  if (_authAction == AuthAction.signIn) {
+                    /// Perform Sign In
+                  } else {
+                    /// Perform Sign Up
+                  }
+                },
               ),
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            TextButton(
+              child: Text(account),
+              onPressed: () {
+                if (_authAction == AuthAction.signIn) {
+                  setState(() => _authAction = AuthAction.signUp);
+                } else {
+                  setState(() => _authAction = AuthAction.signIn);
+                }
+              },
             ),
           ],
         ),
